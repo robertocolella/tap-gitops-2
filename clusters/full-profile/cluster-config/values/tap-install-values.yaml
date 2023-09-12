@@ -1,0 +1,3 @@
+tap_install:
+  package_repository:
+    oci_repository: colellar.azurecr.io/tap-packages/tap

@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: workload-git-auth
+  namespace: tap-install
+type: Opaque
+stringData:
+  content.yaml: |
+    repo:
+      maven: https://nexus-80.tap.corp.com/repository/maven-central/
+      npm: https://nexus-80.tap.corp.com/repository/npm/
+      nuget: https://nexus-80.tap.corp.com/repository/nuget.org-proxy/index.json
+    git:
+      ingress_domain: tap.robertocolella.com
+      host: https://git.tap.robertocolella.com
+      username: tanzu
+      password: VMware1!
+      caFile: |
+        -----BEGIN CERTIFICATE-----
+        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
+        -----END CERTIFICATE-----
+        -----BEGIN CERTIFICATE-----
+        MIIFJnjVG0egNJbhsdjNJASDHBASLMASSsdjnnsdGSFYCLKNvghjFCG...
+        -----END CERTIFICATE-----
