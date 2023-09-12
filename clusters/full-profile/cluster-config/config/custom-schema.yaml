@@ -1,0 +1,13 @@
+#@data/values-schema
+#@overlay/match-child-defaults missing_ok=True
+---
+tbs_full_dependencies:
+  enabled: true
+  pkgr_version: 1.11.5
+  pkgr_repo_url: colellar.azurecr.io/tap-packages/tbs-full-deps:1.11.5
+acs:
+  enabled: true
+  pkgr_version: 2.1.0
+scg:
+  enabled: true
+  pkgr_version: 2.0.6

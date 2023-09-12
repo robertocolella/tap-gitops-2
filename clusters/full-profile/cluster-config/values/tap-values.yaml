@@ -1,0 +1,233 @@
+tap_install:
+  values:
+    shared:
+      ingress_domain: tap.robertocolella.com
+      ingress_issuer: local-issuer
+      image_registry:
+        project_path: colellar.azurecr.io/tap
+      ca_cert_data: |-
+        -----BEGIN CERTIFICATE-----
+        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
+        -----END CERTIFICATE-----
+        -----BEGIN CERTIFICATE-----
+        MIIFJnjVG0egNJbhsdjNJASDHBASLMASSsdjnnsdGSFYCLKNvghjFCG...
+        -----END CERTIFICATE-----
+    ceip_policy_disclosed: true
+    profile: full
+    supply_chain: testing_scanning
+    ootb_supply_chain_basic:
+      registry:
+        server: colellar.azurecr.io
+        repository: tap/supplychain
+      gitops:
+        ssh_secret: git-secret
+      maven:
+        repository:
+          url: https://nexus-80.tap.corp.com/repository/maven-central/
+          secret_name: maven-credentials
+    ootb_supply_chain_testing:
+      registry:
+        server: colellar.azurecr.io
+        repository: tap/supplychain
+      gitops:
+        ssh_secret: git-secret
+      maven:
+        repository:
+          url: https://nexus-80.tap.corp.com/repository/maven-central/
+          secret_name: maven-credentials
+    ootb_supply_chain_testing_scanning:
+      registry:
+        server: colellar.azurecr.io
+        repository: tap/supplychain
+      gitops:
+        ssh_secret: git-secret
+      maven:
+        repository:
+          url: https://nexus-80.tap.corp.com/repository/maven-central/
+          secret_name: maven-credentials
+    contour:
+      envoy:
+        service:
+          type: LoadBalancer
+      contour:
+        configFileContents:
+          tls:
+            minimum-protocol-version: "1.2"
+            cipher-suites:
+            - '[ECDHE-ECDSA-AES128-GCM-SHA256|ECDHE-ECDSA-CHACHA20-POLY1305]'
+            - '[ECDHE-RSA-AES128-GCM-SHA256|ECDHE-RSA-CHACHA20-POLY1305]'
+            - ECDHE-ECDSA-AES256-GCM-SHA384
+            - ECDHE-RSA-AES256-GCM-SHA384
+    buildservice:
+      kp_default_repository: colellar.azurecr.io/tap/build
+      kp_default_repository_username: colellar
+      exclude_dependencies: true
+    tap_gui:
+      service_type: ClusterIP
+      metadataStoreAutoconfiguration: true
+      ingressEnabled: "true"
+      app_config:
+        catalog:
+          locations:
+          - type: url
+            target: https://github.com/MoSehsah/bank-demo/blob/main/catalog/catalog-info.yaml
+        backend:
+          reading:
+            allow:
+            - host: git.tap.robertocolella.com
+        auth:
+          allowGuestAccess: true
+          environment: development
+          session:
+            secret: secretvalue
+          providers:
+            oidc:
+              development:
+                clientId: tap-auth
+                clientSecret: secretvalue
+                metadataUrl: https://dex.tap.robertocolella.com/.well-known/openid-configuration
+    cnrs:
+      domain_template: '{{.Name}}-{{.Namespace}}.{{.Domain}}'
+      ingress_issuer: local-issuer
+    metadata_store:
+      ns_for_export_app_cert: '*'
+      app_service_type: ClusterIP
+    scanning:
+      metadataStore:
+        url: ""
+    grype:
+      targetImagePullSecret: scanner-secret-ref
+      db:
+        dbUpdateUrl: https://minio.tap.robertocolella.com/grype/databases/listing.json
+    crossplane:
+      registryCaBundleConfig:
+        name: ca-bundle-config
+        key: ca-bundle
+    bitnami_services:
+      mysql:
+        helm_chart:
+          repo: oci://colellar.azurecr.io/bitnami/charts
+          version: 9.11.2
+          chart_pull_secret_ref:
+            name: chart-pull
+            namespace: default
+          container_pull_secret_ref:
+            name: container-pull
+            namespace: default
+      postgresql:
+        helm_chart:
+          repo: oci://colellar.azurecr.io/bitnami/charts
+          version: 12.8.4
+          chart_pull_secret_ref:
+            name: chart-pull
+            namespace: default
+          container_pull_secret_ref:
+            name: container-pull
+            namespace: default
+      rabbitmq:
+        helm_chart:
+          repo: oci://colellar.azurecr.io/bitnami/charts
+          version: 12.0.3
+          chart_pull_secret_ref:
+            name: chart-pull
+            namespace: default
+          container_pull_secret_ref:
+            name: container-pull
+            namespace: default
+      redis:
+        helm_chart:
+          repo: oci://colellar.azurecr.io/bitnami/charts
+          version: 17.15.3
+          chart_pull_secret_ref:
+            name: chart-pull
+            namespace: default
+          container_pull_secret_ref:
+            name: container-pull
+            namespace: default
+      kafka:
+        helm_chart:
+          repo: oci://colellar.azurecr.io/bitnami/charts
+          version: 24.0.4
+          chart_pull_secret_ref:
+            name: chart-pull
+            namespace: default
+          container_pull_secret_ref:
+            name: container-pull
+            namespace: default
+      mongodb:
+        helm_chart:
+          repo: oci://colellar.azurecr.io/bitnami/charts
+          version: 13.16.1
+          chart_pull_secret_ref:
+            name: chart-pull
+            namespace: default
+          container_pull_secret_ref:
+            name: container-pull
+            namespace: default
+    policy:
+      tuf_enabled: false
+    tap_telemetry:
+      installed_for_vmware_internal_use: "true"
+    local_source_proxy:
+      repository: colellar.azurecr.io/tap-lsp/tap-lsp
+      push_secret:
+        name: lsp-push-credentials
+        namespace: default
+        create_export: true
+      pull_secret:
+        name: lsp-pull-credentials
+        namespace: default
+        create_export: true
+    namespace_provisioner:
+      controller: false
+      gitops_install:
+        ref: origin/main
+        subPath: gorkem/namespace-provisioner/namespaces
+        url: https://github.com/robertocolella/tap-gitops-2.git
+      additional_sources:
+      - git:
+          ref: origin/main
+          subPath: gorkem/namespace-provisioner/resources
+          url: https://github.com/robertocolella/tap-gitops-2.git
+        path: _ytt_lib/resources
+      import_data_values_secrets:
+      - name: workload-git-auth
+        namespace: tap-install
+        create_export: true
+      overlay_secrets:
+      - name: grype-airgap-overlay-override
+        namespace: tap-install
+        create_export: true
+    package_overlays:
+    - name: ootb-supply-chain-testing-scanning
+      secrets:
+      - name: ootb-supply-chain-testing-scanning-add-source-scanner
